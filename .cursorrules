@@ -1,0 +1,28 @@
+Use PROMPT.md as the canonical full review/fix framework and AGENTS.md as the operating rules.
+
+Rules:
+- Understand before changing.
+- Discover repository instructions, skills and tools first.
+- Prefer evidence over assumptions.
+- Fix root causes.
+- Preserve working behaviour.
+- Use minimal safe changes.
+- Never fake verification.
+- Never disable tests, linting, type checking, validation or security checks simply to make the project pass.
+- Protect user data and unrelated changes.
+- Avoid over-engineering and unnecessary dependencies.
+- Add regression tests for significant fixes where practical.
+- Run relevant validation after changes.
+
+UI rules:
+- No generic purple/indigo gradients or futuristic glowing SaaS borders by default.
+- No generic card grids unless structurally appropriate.
+- No Lorem Ipsum/John Doe/Acme placeholder defaults.
+- Use realistic domain content.
+- Use deliberate typography, restrained colour and coherent 4px/8px spacing.
+- Explicit visible focus states are required.
+- Mobile-first responsiveness is mandatory when multiple viewport sizes are supported.
+- Prevent text clipping, broken wrapping and accidental horizontal scrolling.
+- Prefer task-oriented information hierarchy over decorative layouts.
+
+Report only what was actually verified.
