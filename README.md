@@ -1,28 +1,73 @@
 # Full Code & UI Review
 
-A universal, technology-agnostic review and fix framework for coding agents.
+A universal, technology-agnostic review and fix framework for coding agents — with native project skills for **OpenAI Codex** and **Claude Code**.
 
-Use this repository when you want an AI coding agent to perform a systematic review of a project, find root causes, implement fixes, verify the result, and report only what was actually tested.
+Use this repository when you want an AI coding agent to systematically understand a project, find root causes, implement fixes, verify the result, and report only what was actually tested.
 
 ## Core principles
 
 - Understand the project before changing it.
-- Discover and follow repository-specific instructions, skills, tools, and workflows.
+- Discover and follow repository-specific instructions, skills, tools and workflows.
 - Prefer evidence over assumptions.
 - Fix root causes instead of hiding symptoms.
-- Preserve working behaviour unless it is incorrect, unsafe, or clearly harmful.
+- Preserve working behaviour unless it is incorrect, unsafe or clearly harmful.
 - Make the smallest safe change that fully solves the problem.
 - Never fake verification.
-- Never disable tests, linting, type checking, validation, or security checks just to make a project appear healthy.
+- Never disable tests, linting, type checking, validation or security checks just to make a project appear healthy.
 - Protect existing data and unrelated user changes.
 - Avoid over-engineering.
 - For UI work, avoid generic AI/SaaS visual defaults and use deliberate design systems.
 
-## Files
+## Agent support
 
-- `PROMPT.md` — the full universal review/fix prompt.
+### OpenAI Codex
+
+Repository skills are stored in:
+
+```text
+.agents/skills/<skill-name>/SKILL.md
+```
+
+Codex can discover and select these skills based on their descriptions.
+
+### Claude Code
+
+Project skills are stored in:
+
+```text
+.claude/skills/<skill-name>/SKILL.md
+```
+
+They can be selected automatically or invoked directly with slash commands such as:
+
+```text
+/full-code-ui-review
+/root-cause-debug
+/ui-ux-quality
+```
+
+## Included skills
+
+| Skill | Purpose |
+| --- | --- |
+| `full-code-ui-review` | Full repository-wide review, repair and verification |
+| `root-cause-debug` | Reproduce failures and fix the actual root cause |
+| `ui-ux-quality` | UI/UX, responsive design, accessibility and non-generic visual quality |
+| `security-hardening` | Evidence-based security review and remediation |
+| `refactor-code-quality` | Refactoring and maintainability without unintended behaviour changes |
+| `test-fix-verify` | Baseline, failing checks, regression tests and final verification |
+| `release-readiness` | Production/release readiness and blocker assessment |
+
+Both Codex and Claude Code receive the same core quality model while retaining agent-specific discovery/invocation paths.
+
+## Repository files
+
+- `PROMPT.md` — expanded universal full review/fix framework.
 - `AGENTS.md` — repository-wide agent operating rules.
-- `CLAUDE.md` — Claude Code guidance.
+- `CODEX.md` — Codex guidance and skill map.
+- `CLAUDE.md` — Claude Code guidance and slash-command skill map.
+- `.agents/skills/` — native Codex project skills.
+- `.claude/skills/` — native Claude Code project skills.
 - `.github/copilot-instructions.md` — GitHub Copilot instructions.
 - `.cursorrules` — Cursor guidance.
 - `CHANGELOG.md` — repository changes.
@@ -30,9 +75,30 @@ Use this repository when you want an AI coding agent to perform a systematic rev
 
 ## Suggested usage
 
-Copy `PROMPT.md` into your coding agent, or place the relevant agent instruction file into the target repository.
+### Full review
 
-The prompt is designed to adapt to:
+Use `full-code-ui-review` when the task is broad: full audit, full code/UI review, production hardening, or "find and fix everything".
+
+### Focused work
+
+Use the narrowest skill for targeted tasks. For example, use `root-cause-debug` for a specific regression instead of loading the entire full-review workflow.
+
+Skills can be combined when a task genuinely crosses domains, for example:
+
+```text
+full-code-ui-review + security-hardening + test-fix-verify
+```
+
+or in Claude Code:
+
+```text
+/security-hardening
+/test-fix-verify
+```
+
+## Supported project types
+
+The framework adapts to:
 
 - frontend applications
 - backend applications
@@ -54,6 +120,8 @@ The prompt is designed to adapt to:
 - legacy systems
 - prototypes and partially completed projects
 
+Only relevant review dimensions should be applied. A CLI tool should not be forced through a web UI checklist, and a static frontend should not be forced through database rules it does not use.
+
 ## Review priority
 
 1. Critical security vulnerabilities
@@ -72,6 +140,26 @@ The prompt is designed to adapt to:
 14. Maintainability
 15. Cosmetic inconsistencies
 16. Optional improvements
+
+## UI/UX philosophy
+
+The framework explicitly rejects common generic AI-design defaults such as automatic purple/indigo gradients, glowing SaaS borders, meaningless card grids, excessive glassmorphism and fake placeholder content.
+
+UI changes should instead be based on the project's real information hierarchy, users and tasks, with coherent typography, spacing, responsive behavior, accessibility and realistic data.
+
+## Verification philosophy
+
+A green build is not proof of correctness.
+
+A passing test suite is not proof that untested critical behaviour works.
+
+A hidden UI control is not authorisation.
+
+A swallowed exception is not error handling.
+
+A recommendation is not a completed fix.
+
+Agents must distinguish verified results from assumptions and document anything they could not test.
 
 ## License
 
