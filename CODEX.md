@@ -18,6 +18,18 @@ Available skills:
 
 Select the narrowest relevant skill for focused work. Use `full-code-ui-review` for broad audits or "review/fix everything" requests. Skills may be combined when the task genuinely crosses domains.
 
+## Optional Caveman integration
+
+This repository includes an optional integration for `JuliusBrussee/caveman` under `integrations/caveman/`.
+
+Install upstream Caveman skills for Codex with:
+
+```bash
+npx skills add JuliusBrussee/caveman --skill '*' -a codex --yes
+```
+
+Caveman controls response compression and token-conscious communication. It does not replace this repository's engineering rules. Correctness, security, evidence, exact commands/errors, destructive-operation warnings and verification always take priority over terseness.
+
 Before editing:
 
 1. Inspect repository instructions, skills, tools, build scripts and tests.
