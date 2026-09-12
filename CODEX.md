@@ -2,6 +2,22 @@
 
 Use `PROMPT.md` as the canonical full review/fix framework and `AGENTS.md` as the canonical operating rules.
 
+## Repository skills
+
+Codex repo-level skills live under `.agents/skills/`.
+
+Available skills:
+
+- `full-code-ui-review` — complete repository-wide review and repair.
+- `root-cause-debug` — reproduce and fix bugs at the root cause.
+- `ui-ux-quality` — UI/UX, responsive design and accessibility quality gate.
+- `security-hardening` — evidence-based security review and remediation.
+- `refactor-code-quality` — maintainability/refactoring while preserving behavior.
+- `test-fix-verify` — baseline, repair failing checks and verify changes.
+- `release-readiness` — production/release readiness assessment.
+
+Select the narrowest relevant skill for focused work. Use `full-code-ui-review` for broad audits or "review/fix everything" requests. Skills may be combined when the task genuinely crosses domains.
+
 Before editing:
 
 1. Inspect repository instructions, skills, tools, build scripts and tests.
@@ -21,7 +37,7 @@ While editing:
 - Add regression tests for important fixes when practical.
 - Follow existing repository conventions when they are safe and sensible.
 
-For UI work, follow the design rules in `PROMPT.md`:
+For UI work:
 
 - avoid generic AI/SaaS design defaults
 - use realistic domain content
