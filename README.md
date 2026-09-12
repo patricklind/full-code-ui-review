@@ -60,6 +60,39 @@ They can be selected automatically or invoked directly with slash commands such 
 
 Both Codex and Claude Code receive the same core quality model while retaining agent-specific discovery/invocation paths.
 
+## Caveman integration
+
+Optional integration with [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) adds a token-conscious communication layer on top of this framework.
+
+### Codex
+
+```bash
+npx skills add JuliusBrussee/caveman --skill '*' -a codex --yes
+```
+
+Or run:
+
+```bash
+./integrations/caveman/install-codex.sh
+```
+
+### Claude Code
+
+```bash
+claude plugin marketplace add JuliusBrussee/caveman
+claude plugin install caveman@caveman
+```
+
+Or run:
+
+```bash
+./integrations/caveman/install-claude.sh
+```
+
+Caveman controls conciseness. This repository continues to control engineering quality, security, testing and verification. Compression must never remove critical warnings, exact errors, commands, numeric values, limitations or destructive-action context.
+
+See `integrations/caveman/README.md` and `THIRD_PARTY.md` for integration and licensing notes.
+
 ## Repository files
 
 - `PROMPT.md` — expanded universal full review/fix framework.
@@ -68,8 +101,10 @@ Both Codex and Claude Code receive the same core quality model while retaining a
 - `CLAUDE.md` — Claude Code guidance and slash-command skill map.
 - `.agents/skills/` — native Codex project skills.
 - `.claude/skills/` — native Claude Code project skills.
+- `integrations/caveman/` — optional Caveman integration and installers.
 - `.github/copilot-instructions.md` — GitHub Copilot instructions.
 - `.cursorrules` — Cursor guidance.
+- `THIRD_PARTY.md` — third-party attribution and license notes.
 - `CHANGELOG.md` — repository changes.
 - `LICENSE` — MIT license.
 
