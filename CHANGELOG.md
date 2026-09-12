@@ -2,6 +2,27 @@
 
 All notable changes to this repository will be documented in this file.
 
+## 1.1.0 - 2026-09-12
+
+### Added
+
+- Native OpenAI Codex project skills under `.agents/skills/`.
+- Native Claude Code project skills under `.claude/skills/`.
+- `full-code-ui-review` master skill.
+- `root-cause-debug` skill.
+- `ui-ux-quality` skill.
+- `security-hardening` skill.
+- `refactor-code-quality` skill.
+- `test-fix-verify` skill.
+- `release-readiness` skill.
+- Agent-specific skill discovery and invocation guidance.
+- README skill matrix and usage examples.
+
+### Changed
+
+- Expanded `CODEX.md` with repository skill selection guidance.
+- Expanded `CLAUDE.md` with project skill slash commands and selection guidance.
+
 ## 1.0.0 - 2026-09-12
 
 ### Added
