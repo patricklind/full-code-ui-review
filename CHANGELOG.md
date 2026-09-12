@@ -2,6 +2,25 @@
 
 All notable changes to this repository will be documented in this file.
 
+## 1.2.0 - 2026-09-12
+
+### Added
+
+- Optional `JuliusBrussee/caveman` integration under `integrations/caveman/`.
+- Codex installer for upstream Caveman skills.
+- Claude Code installer for the upstream Caveman plugin.
+- `THIRD_PARTY.md` with Caveman attribution and licensing notes.
+
+### Changed
+
+- `CODEX.md` now defines how Caveman interacts with the repository's engineering skills.
+- `CLAUDE.md` now defines how Caveman interacts with the repository's engineering skills.
+- README now documents Caveman installation and precedence rules.
+
+### Licensing
+
+- Caveman engine/proxy runtime is not vendored. Upstream designated runtime directories use Business Source License 1.1; integration installs those components only from upstream when explicitly requested.
+
 ## 1.1.0 - 2026-09-12
 
 ### Added
