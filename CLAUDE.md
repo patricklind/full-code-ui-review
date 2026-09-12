@@ -16,6 +16,21 @@ Claude Code project skills live under `.claude/skills/` and can be invoked direc
 
 Use the narrowest relevant skill for focused work. Use `/full-code-ui-review` for broad audits and "review/fix everything" tasks. Combine skills only when the work genuinely spans multiple domains.
 
+## Optional Caveman integration
+
+This repository includes an optional integration for `JuliusBrussee/caveman` under `integrations/caveman/`.
+
+Install the upstream Claude Code plugin with:
+
+```bash
+claude plugin marketplace add JuliusBrussee/caveman
+claude plugin install caveman@caveman
+```
+
+Use Caveman when concise output is useful. Caveman controls communication style and optional upstream tooling; it does not override this repository's correctness, security, testing or verification requirements.
+
+Do not compress away security warnings, irreversible-action warnings, exact errors, commands, numeric values, constraints or unresolved limitations.
+
 Before changing code:
 
 1. Read project-specific instructions.
